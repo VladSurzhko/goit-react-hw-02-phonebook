@@ -41,6 +41,12 @@ class inputForm extends Component {
     }));
   }
 
+  deleteContact = (contactId) => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId)
+    }));
+}
+
   render() {
     const { contacts, name, filter, number } = this.state;
 
@@ -112,6 +118,7 @@ class inputForm extends Component {
             {filteredContacts.map(contact => (
               <li className={css.items} key={contact.id}>
                 {contact.name}: {contact.number}
+                <button className={css.btnDelete} onClick={() => this.deleteContact(contact.id)}>delete</button>
               </li>
             ))}
           </ul>
