@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { nanoid } from "nanoid";
+import css from "../Phonebook/phonestyle.module.css"
+
 
 class inputForm extends Component {
   state = {
@@ -50,12 +52,17 @@ class inputForm extends Component {
     
 
     return (
-      <div >
-        <h2>Phonebook</h2>
-        <form onSubmit={this.handleAddContact}>
-          <label htmlFor="nameInput">
+      <div className={css.section}>
+        <h2 className={css.contText}>Phonebook</h2>
+        <form
+        className={css.form}  
+        onSubmit={this.handleAddContact}>
+          <label
+          className={css.contact} 
+          htmlFor="nameInput">
             Name:
             <input
+              className={css.cont}
               id="nameInput"
               type="text"
               name="name"
@@ -66,9 +73,12 @@ class inputForm extends Component {
               required
             />
           </label>
-          <label htmlFor="numberInput">
+          <label
+          className={css.contact} 
+          htmlFor="numberInput">
             Number:
             <input
+              className={css.cont}
               id="numberInput"
               type="tel"
               name="number"
@@ -79,13 +89,18 @@ class inputForm extends Component {
               required
             />
           </label>
-          <button type="submit">Add contact</button>
+          <button
+          className={css.btn} 
+          type="submit">Add contact</button>
         </form>
-        <div>
-          <h2>Contacts</h2>
-          <label htmlFor="filterInput">
+        <div className={css.formContact}>
+          <h2 className={css.text}>Contacts</h2>
+          <label 
+          className={css.findContact}
+          htmlFor="filterInput">
             Find contacts by name:
             <input
+              className={css.lastInput}
               id="filterInput"
               type="text"
               name="filter"
@@ -93,9 +108,9 @@ class inputForm extends Component {
               onChange={this.handleInputChange}
             />
           </label>
-          <ul>
+          <ul className={css.lists}>
             {filteredContacts.map(contact => (
-              <li key={contact.id}>
+              <li className={css.items} key={contact.id}>
                 {contact.name}: {contact.number}
               </li>
             ))}
