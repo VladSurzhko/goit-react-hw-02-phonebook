@@ -10,8 +10,8 @@ class Phonebook extends Component {
   state = {
     contacts: [],
     filter: "",
-    name: "",
-    number: ""
+    // name: "",
+    // number: ""
   };
 
   handleInputChange = (event) => {

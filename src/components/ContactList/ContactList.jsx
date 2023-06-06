@@ -1,4 +1,5 @@
 import React from "react";
+// import PropTypes from 'prop-types';
 //import { nanoid } from "nanoid";
 import css from "../Phonebook/phonestyle.module.css";
 
@@ -21,3 +22,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
 };
 
 export default ContactList;
+
+// ContactList.propTypes = {
+//   contacts:PropTypes.string,
+// }

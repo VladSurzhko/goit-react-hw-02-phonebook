@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 //import { nanoid } from "nanoid";
 import css from "../Phonebook/phonestyle.module.css";
 
@@ -46,3 +47,8 @@ const ContactForm = ({ name, number, onInputChange, onAddContact }) => {
 };
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  name:PropTypes.string,
+  number:PropTypes.string,
+}

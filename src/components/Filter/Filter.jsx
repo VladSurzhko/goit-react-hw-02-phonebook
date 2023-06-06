@@ -1,5 +1,6 @@
 import React from "react";
 import css from "../Phonebook/phonestyle.module.css";
+// import PropTypes from "prop-types"
 
 const Filter = ({ filter, onFilterChange }) => {
   return (
@@ -18,3 +19,8 @@ const Filter = ({ filter, onFilterChange }) => {
 };
 
 export default Filter;
+
+
+// Filter.propTypes = {
+//   filter:PropTypes.string,
+// }
