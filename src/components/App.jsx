@@ -19,9 +19,19 @@ class Phonebook extends Component {
     this.setState({ [name]: value });
   };
 
-  handleAddContact = (event) => {
-    event.preventDefault();
-    const { name, number, contacts } = this.state;
+  // handleAddContact = (event) => {
+  //   event.preventDefault();
+  //   const { name, number, contacts } = this.state;
+
+  //   const errorContact = contacts.find((contact) => contact.name === name);
+
+  //   if (errorContact) {
+  //     alert(`${name} is already in contacts`);
+  //     return;
+  //   }
+
+  handleAddContact = (name, number) => {
+    const { contacts } = this.state;
 
     const errorContact = contacts.find((contact) => contact.name === name);
 
@@ -55,7 +65,7 @@ class Phonebook extends Component {
   };
 
   render() {
-    const { contacts, filter, name, number } = this.state;
+    const { contacts, filter } = this.state;
 
     const filteredContacts = contacts.filter((contact) =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -66,9 +76,9 @@ class Phonebook extends Component {
         <h2 className={css.contText}>Phonebook</h2>
 
         <ContactForm
-          name={name}
-          number={number}
-          onInputChange={this.handleInputChange}
+          // name={name}
+          // number={number}
+          // onInputChange={this.handleInputChange}
           onAddContact={this.handleAddContact}
         />
 
